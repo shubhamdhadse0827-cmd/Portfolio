@@ -1,36 +1,69 @@
-body{
+*{
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body{
     background-color: #222;
-    color:#f2f2f2;
+    color: #f2f2f2;
 }
 
-.contect-section{
-    padding: 80px 15px;
+/* Main section */
+.contact{
+    min-height: 100vh;
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.contect-section h1{
-    font-size: 40px;
-    margin-bottom: 20px;
+/* Heading */
+.contact h1{
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-.contect-section h1 span{
+.contact h1 span{
     color: #38bdf8;
 }
 
+/* Description */
 .contact-text{
-    font-size: 17px;
-    color: #cbd5f5;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.contact-info p{
+    max-width: 850px;
+    margin: 0 auto 45px;
     font-size: 18px;
-    margin: 12px 0;
+    line-height: 1.7;
+    color: #cbd5f5;
 }
 
-.contact-info i{
+/* Contact card */
+.contact-card{
+    max-width: 450px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Contact row */
+.contact-item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 17px;
+    margin: 18px 0;
+}
+
+/* Icons */
+.contact-item i{
     color: #38bdf8;
-    margin-right: 10px;
+    font-size: 22px;
+    min-width: 24px;
+}
+
+/* Hover effect */
+.contact-item:hover{
+    transform: translateX(5px);
+    transition: 0.3s ease;
 }
