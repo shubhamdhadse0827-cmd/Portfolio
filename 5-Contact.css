@@ -1,69 +1,194 @@
-*{
+:root {
+    --primary-color: #222;
+    --secondary-color: #f2f2f2;
+    --accent-color: #38bdf8; /* Updated to match contact page accent */
+    --icon-bg: #1a1a1a;
+    --light-primary: #f2f2f2;
+    --light-secondary: #222;
+    --light-icon-bg: #e0e0e0;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-body{
-    background-color: #222;
-    color: #f2f2f2;
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 0.3s ease; /* Smooth transition for mode switch */
 }
 
-/* Main section */
-.contact{
+/* ================= NAVIGATION ================= */
+.nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* ================= TOGGLE ICON ================= */
+.toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    height: 50px;
+    width: 50px;
+    background: #000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.3s ease;
+}
+
+.toggle:hover {
+    background: var(--accent-color);
+}
+
+/* ================= MAIN SECTION ================= */
+.contact {
     min-height: 100vh;
-    padding: 80px 20px;
+    padding: 120px 20px 80px; /* Adjusted for nav and footer */
     text-align: center;
 }
 
-/* Heading */
-.contact h1{
+/* ================= HEADING ================= */
+.contact h1 {
     font-size: 42px;
     margin-bottom: 15px;
 }
 
-.contact h1 span{
-    color: #38bdf8;
+.contact h1 span {
+    color: var(--accent-color);
 }
 
-/* Description */
-.contact-text{
+/* ================= DESCRIPTION ================= */
+.contact-text {
     max-width: 850px;
     margin: 0 auto 45px;
     font-size: 18px;
     line-height: 1.7;
-    color: #cbd5f5;
+    color: #222;
 }
 
-/* Contact card */
-.contact-card{
+/* ================= CONTACT CARD ================= */
+.contact-card {
     max-width: 450px;
     margin: 0 auto;
-    background: #1a1a1a;
+    background: var(--icon-bg);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease; /* For light mode */
 }
 
-/* Contact row */
-.contact-item{
+/* ================= CONTACT ROW ================= */
+.contact-item {
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: 17px;
     margin: 18px 0;
+    transition: transform 0.3s ease;
 }
 
-/* Icons */
-.contact-item i{
-    color: #38bdf8;
+/* ================= ICONS ================= */
+.contact-item i {
+    color: var(--accent-color);
     font-size: 22px;
     min-width: 24px;
 }
 
-/* Hover effect */
-.contact-item:hover{
+/* ================= HOVER EFFECT ================= */
+.contact-item:hover {
     transform: translateX(5px);
-    transition: 0.3s ease;
+}
+
+/* ================= LINKS IN CONTACT ITEMS ================= */
+.contact-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .contact {
+        padding: 140px 15px 100px;
+    }
+
+    .contact h1 {
+        font-size: 32px;
+    }
+
+    .contact-text {
+        font-size: 16px;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+
+    .nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .toggle {
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+    }
+}
+
+/* ================= LIGHT MODE CLASS ================= */
+.light-mode {
+    --primary-color: var(--light-primary);
+    --secondary-color: var(--light-secondary);
+    --icon-bg: var(--light-icon-bg);
+    --accent-color: #28a745; /* Darker blue for light mode */
 }

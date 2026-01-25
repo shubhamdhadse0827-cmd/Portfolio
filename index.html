@@ -21,13 +21,12 @@
                 <i class="fa fa-sun"></i>
             </div>
 
-            <!-- Navigation Icons -->
-            <div class="navigation">
-                <a href="index.html"><i class="fa fa-home"></i></a>
-                <a href="intership pdf.pdf" target="_blank"><i class="fa fa-user"></i></a>
-                <a href="4-project.html"><i class="fa fa-cog"></i></a>
-                <a href="#"><i class="fa fa-comment"></i></a>
-            </div>
+            <nav class="navigation" role="navigation" aria-label="Main navigation">
+                <a href="index.html" aria-label="Home" data-tooltip="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+                <a href="intership pdf.pdf" target="_blank" aria-label="Download Resume" data-tooltip="Resume"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
+                <a href="4-project.html" aria-label="Projects" data-tooltip="Projects"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></a>
+                <a href="5-Contact.html" aria-label="Contact" data-tooltip="Contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+            </nav>
 
             <!-- Hero Content -->
             <div class="header-content">
@@ -52,7 +51,6 @@
 
                     <div class="btn-group">
                         <a href="intership pdf.pdf" download class="btn active">Download CV</a>
-                        <a href="5-Contact.html" class="btn">Contact</a>
                     </div>
 
                     <div class="social"> 
@@ -66,6 +64,27 @@
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for Dark/Light Mode Toggle -->
+    <script>
+        // Select the toggle button and body
+        const toggle = document.querySelector('.toggle');
+        const body = document.body;
+        const icon = toggle.querySelector('i');
+
+        // Add click event listener
+        toggle.addEventListener('click', () => {
+            // Toggle the 'light-mode' class on body
+            body.classList.toggle('light-mode');
+
+            // Change icon based on mode
+            if (body.classList.contains('light-mode')) {
+                icon.className = 'fa-solid fa-moon'; // Moon for light mode
+            } else {
+                icon.className = 'fa-solid fa-sun'; // Sun for dark mode
+            }
+        });
+    </script>
 
 </body>
 </html>

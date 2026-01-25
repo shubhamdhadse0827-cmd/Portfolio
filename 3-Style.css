@@ -40,6 +40,11 @@
     box-shadow: 0 8px 18px rgba(0,0,0,0.35);
 }
 
+.toggle:hover {
+    background: var(--accent-color);
+}
+
+
 /* ================= RIGHT SIDE NAV ICONS ================= */
 .navigation{
     position: fixed;
@@ -67,6 +72,35 @@
 .navigation a i:hover{
     background: var(--accent-color);
     transform: translateY(-4px) scale(1.05);
+}
+
+/* ================= TOOLTIPS FOR NAV ICONS ================= */
+.navigation a {
+    position: relative;
+}
+
+.navigation a::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 100%; /* Tooltip left side of icon */
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-right: 10px; /* Space between tooltip and icon */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navigation a:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* ================= HERO SECTION ================= */
@@ -119,6 +153,7 @@
 /* ================= BUTTONS ================= */
 .btn-group{
     margin-top: 40px;
+    text-align: center; /* Centers the button */
 }
 
 .btn{
@@ -127,15 +162,17 @@
     border-radius: 30px;
     border: 2px solid #e5e5e5;
     color: #fff;
-    margin-right: 12px;
+    margin-right: 0; /* Removed margin-right since only one button */
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease; /* Enhanced transition for all properties */
 }
 
 .btn:hover,
 .btn.active{
     background: var(--accent-color);
     border-color: var(--accent-color);
+    transform: scale(1.1); /* Slight scale on hover */
+    box-shadow: 0 0 20px rgba(0, 124, 237, 0.5); /* Glow effect */
 }
 
 /* ================= SOCIAL ICONS ================= */
@@ -221,4 +258,12 @@
     .social{
         justify-content: center;
     }
+}
+
+/* ================= LIGHT MODE CLASS ================= */
+.light-mode {
+    --primary-color: #f2f2f2; /* Light background */
+    --secondary-color: #222; /* Dark text */
+    --icon-bg: #000; /* Black icons for strong contrast */
+    --accent-color: #28a745; /* Green for hover */
 }

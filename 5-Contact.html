@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <meta name="description" content="Contact Shubham Dhadse for project collaboration, internships, or web development work.">
+    <title>Contact Me - Shubham Dhadse</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -12,6 +13,16 @@
     <link rel="stylesheet" href="5-Contact.css">
 </head>
 <body>
+
+    <!-- Navigation Back to Home -->
+    <nav class="nav">
+        <a href="index.html" aria-label="Back to Home"><i class="fa-solid fa-house"></i> Home</a>
+    </nav>
+
+    <!-- Dark/Light Mode Toggle (Consistency with main portfolio) -->
+    <div class="toggle" aria-label="Toggle dark/light mode">
+        <i class="fa-solid fa-sun"></i>
+    </div>
 
     <section class="contact">
         <h1>Contact <span>Me</span></h1>
@@ -31,23 +42,22 @@
 
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>shubhamdhadse328@gmail.com</span>
+                <span><a href="mailto:shubhamdhadse328@gmail.com">shubhamdhadse328@gmail.com</a></span>
             </div>
 
-            
             <div class="contact-item">
                 <i class="fa-brands fa-linkedin"></i>
-                <span>shubham-dhadse-5bb86b354</span>
+                <span><a href="https://www.linkedin.com/in/shubham-dhadse-5bb86b354" target="_blank" rel="noopener noreferrer">shubham-dhadse-5bb86b354</a></span>
             </div>
-            
+
             <div class="contact-item">
                 <i class="fa-brands fa-github"></i>
-                <span>shubhamdhadse0827-cmd</span>
+                <span><a href="https://github.com/shubhamdhadse0827-cmd" target="_blank" rel="noopener noreferrer">shubhamdhadse0827-cmd</a></span>
             </div>
-            
+
             <div class="contact-item">
                 <i class="fa-brands fa-instagram"></i>
-                <span>shubham____2708</span>
+                <span><a href="https://www.instagram.com/shubham____2708" target="_blank" rel="noopener noreferrer">shubham____2708</a></span>
             </div>
 
             <div class="contact-item">
@@ -57,6 +67,27 @@
 
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Shubham Dhadse. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dark/Light Mode Toggle (Copy from main portfolio) -->
+    <script>
+        const toggle = document.querySelector('.toggle');
+        const body = document.body;
+        const icon = toggle.querySelector('i');
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                icon.className = 'fa-solid fa-moon';
+            } else {
+                icon.className = 'fa-solid fa-sun';
+            }
+        });
+    </script>
 
 </body>
 </html>

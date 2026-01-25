@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
-    <link rel="stylesheet" href="./4-project.css">
+    <meta name="description" content="Explore Shubham Dhadse's projects including Resume Builder, E-Building Care System, and more.">
+    <title>Projects - Shubham Dhadse</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="4-project.css">
 </head>
 <body>
+
+    <!-- Navigation Back to Home -->
+    <nav class="nav">
+        <a href="index.html" aria-label="Back to Home"><i class="fa-solid fa-house"></i> Home</a>
+    </nav>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="toggle" aria-label="Toggle dark/light mode">
+        <i class="fa-solid fa-sun"></i>
+    </div>
+
     <section class="projects">
         <h1>My <span>Projects</span></h1>
     </section>
 
-   <div class="project-container">
+    <div class="project-container">
 
         <!-- ===== PROJECT 1 ===== -->
         <div class="project-card">
@@ -22,9 +39,7 @@
                 educational, and professional details and generate a clean, 
                 job-ready resume.
             </p>
-            <a href="https://github.com/username/resume-builder"
-               target="_blank"
-               class="btn">View on GitHub</a>
+            <a href="https://github.com/shubhamdhadse0827-cmd/resume-builder" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
         </div>
 
         <!-- ===== PROJECT 2 ===== -->
@@ -35,9 +50,7 @@
                 employees, rent payments, and maintenance activities. The system 
                 provides centralized control with role-based access and reporting.
             </p>
-            <a href="https://github.com/shubhamdhadse0827-cmd/College-Project"
-               target="_blank"
-               class="btn">View on GitHub</a>
+            <a href="https://github.com/shubhamdhadse0827-cmd/College-Project" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
         </div>
 
         <!-- ===== PROJECT 3 ===== -->
@@ -48,9 +61,7 @@
                 operations such as account creation, balance enquiry, deposit, 
                 withdrawal, and transaction management in a secure environment.
             </p>
-            <a href="https://github.com/username/banking-management-system"
-               target="_blank"
-               class="btn">View on GitHub</a>
+            <a href="https://github.com/shubhamdhadse0827-cmd/banking-management-system" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
         </div>
 
         <!-- ===== PROJECT 4 ===== -->
@@ -61,11 +72,31 @@
                 add items to cart, and place orders. The system includes product 
                 management, user authentication, and a simple checkout process.
             </p>
-            <a href="https://github.com/username/online-shopping-system"
-               target="_blank"
-               class="btn">View on GitHub</a>
+            <a href="https://github.com/shubhamdhadse0827-cmd/online-shopping-system" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
         </div>
 
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Shubham Dhadse. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dark/Light Mode Toggle -->
+    <script>
+        const toggle = document.querySelector('.toggle');
+        const body = document.body;
+        const icon = toggle.querySelector('i');
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                icon.className = 'fa-solid fa-moon';
+            } else {
+                icon.className = 'fa-solid fa-sun';
+            }
+        });
+    </script>
+
 </body>
 </html>
